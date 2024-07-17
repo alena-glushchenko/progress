@@ -51,8 +51,6 @@ class Progress {
             value = 0;
         }
 
-        // this.progress.style.background = `conic-gradient(blue ${value}%, #e6e6f1f7 0)`;
-
         const strokeDasharray = Math.round(2 * Math.PI * this.progressCircle.getAttribute('r'));
         const currentDashOffset = strokeDasharray * (value / 100);
 
@@ -155,3 +153,24 @@ switchInputHide.addEventListener('change', () => {
 //         this.hidden = !this.hidden;
 //     }
 // }
+//
+// const progressInstance = new Progress(document.querySelector('.progress'));
+//
+// valueInput.addEventListener('input', (event) => {
+//     let value = event.target.value;
+//
+//     if (value > 100) {
+//         value = 100;
+//         valueInput.value = value;
+//     }
+//
+//     progressInstance.updateValue(parseInt(value));
+// });
+//
+// switchInputAnimate.addEventListener('change', () => {
+//     progressInstance.toggleAnimation();
+// });
+//
+// switchInputHide.addEventListener('change', () => {
+//     progressInstance.toggleHiddenState();
+// });

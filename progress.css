@@ -4,15 +4,6 @@
     padding: 0;
 }
 
-.screen-orientation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-size: 24px;
-}
-
 .progress-container {
     display: flex;
     align-items: center;
@@ -46,13 +37,13 @@
     transform: rotate(-90deg)
 }
 
-.progress-container-svg svg, .progress-container-svg2 svg{
+.progress-container-svg svg {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.progress-container-svg circle, .progress-container-svg2 circle {
+.progress-container-svg circle {
     transform-origin: center;
 }
 
