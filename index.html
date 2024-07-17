@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="progress.css" rel="stylesheet" type="text/css">
+    <script type="module" src="progress.js"></script>
+</head>
+<body style="height: 100%">
+<div class="progress-container">
+    <div class="progress"></div>
+
+    <div class="progress-controls">
+        <div class="progress-value">
+            <input type="number" class="value-input" value="0" min="0" max="100" aria-label="value">
+            <span>Value</span>
+        </div>
+        <div class="progress-switch animate">
+            <div class="switch-container">
+                <input type="checkbox" class="switch-input" id="animate">
+                <label for="animate" class="switch-label"></label>
+            </div>
+            <span>Animate</span>
+        </div>
+        <div class="progress-switch hide">
+            <input type="checkbox" class="switch-input" id="hide">
+            <label for="hide" class="switch-label"></label>
+            <span>Hide</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

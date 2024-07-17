@@ -1,0 +1,158 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.screen-orientation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 24px;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 100%;
+}
+
+@media (orientation: portrait) {
+    .progress-container {
+        flex-direction: column;
+    }
+}
+
+.progress-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    min-height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(blue 0, #e6e6f1f7 0);
+
+    mask: radial-gradient(circle, transparent 58%, black 59%);
+}
+
+.progress-container-svg, .progress-container-svg2 {
+    min-width: 150px;
+    min-height: 150px;
+    transform: rotate(-90deg)
+}
+
+.progress-container-svg svg, .progress-container-svg2 svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-container-svg circle, .progress-container-svg2 circle {
+    transform-origin: center;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.value-input {
+    border-radius: 20px;
+    min-height: 24px;
+    max-width: 43px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid black;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.value-input::-webkit-inner-spin-button,
+.value-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.value-input:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 4px rgba(33, 150, 243, 0.5);
+}
+
+.progress-value span {
+    margin-left: 12px;
+    font-weight: bold;
+}
+
+.progress-switch {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 45px;
+    height: 26px;
+}
+
+.switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #edebeb;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.switch-label:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.switch-input:checked + .switch-label {
+    background-color: #2196F3;
+}
+
+.switch-input:focus + .switch-label {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.switch-input:checked + .switch-label:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+}
+
+.progress-switch span {
+    margin-left: 62px;
+    font-weight: bold;
+}
+
