@@ -146,7 +146,6 @@
 }
 
 .switch-input:checked + .switch-label:before {
-    -webkit-transform: translateX(19px);
     -ms-transform: translateX(19px);
     transform: translateX(19px);
 }
