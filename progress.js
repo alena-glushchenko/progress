@@ -70,9 +70,9 @@ class Progress {
 
     toggleHiddenState = () => {
         if (this.hidden) {
-            this.progressContainer.style.display = 'block';
+            this.progressContainer.style.visibility = 'visible';
         } else {
-            this.progressContainer.style.display = 'none';
+            this.progressContainer.style.visibility = 'hidden';
         }
 
         this.hidden = !this.hidden;
@@ -145,9 +145,9 @@ switchInputHide.addEventListener('change', () => {
 //
 //     toggleHiddenState = () => {
 //         if (this.hidden) {
-//             this.progressContainer.style.display = 'block';
+//             this.progressContainer.style.visibility = 'visible';
 //         } else {
-//             this.progressContainer.style.display = 'none';
+//             this.progressContainer.style.visibility = 'hidden';
 //         }
 //
 //         this.hidden = !this.hidden;
@@ -174,3 +174,130 @@ switchInputHide.addEventListener('change', () => {
 // switchInputHide.addEventListener('change', () => {
 //     progressInstance.toggleHiddenState();
 // });
+
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+const sumTo = (n) => {
+    // if (n === 1) {
+    //     return 1;
+    // } else {
+    //     return n + sumTo(n - 1);
+    // }
+
+    return n === 1 ? 1 :  n + sumTo(n - 1);
+}
+
+// console.log(sumTo(1));
+// console.log(sumTo(2));
+// console.log(sumTo(3));
+// console.log(sumTo(4));
+// console.log(sumTo(100));
+
+
+const factorial = (n) => {
+    // if (n === 1) {
+    //     return 1;
+    // } else {
+    //     return n * factorial(n - 1);
+    // }
+
+    return n === 1 ? 1 : n * factorial(n - 1)
+}
+
+// console.log(factorial(5))
+
+
+const fib = (n) => {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+
+// console.log(fib(3)); // 2
+// console.log(fib(7)); // 13
+// console.log(fib(77)); // 5527939700884757
+
+const printList = (list) => {
+    console.log( list.value)
+    !list.next ? list.value : printList(list.next);
+}
+
+// printList(list)
+
+const printListReverse = (list) => {
+    if (list.next) {
+        printListReverse(list.next);
+    }
+    console.log(list.value)
+
+    // list.next ? printList(list.next) : list.value;
+}
+
+// printListReverse(list)
+
+const sum = (a) => {
+    return function (b) {
+        return a + b;
+    }
+}
+
+function makeCounter() {
+    let count = 0;
+
+    return function() {
+        return count++; // есть доступ к внешней переменной "count"
+    };
+}
+
+const byField = (sortingValue) => {
+    return function (a, b) {
+        return a[sortingValue] > b[sortingValue] ? 1 : -1;
+    }
+}
+
+//1 4 2
+//3 2 1
+
+const game = (n, ...args) => {
+    let Petya = args[0];
+    let Vasya = args[1];
+
+    for (let i = 2; i < n; i++) {
+        if (Vasya > Petya) {
+            Petya += args[i];
+        } else {
+            Vasya += args[i];
+        }
+    }
+
+    return Petya === Math.max(Petya, Vasya) ? "Petya" : "Vasya";
+}
+
+// console.log(game(3, 1, 2, 3 ))
+
+const money = (n , sum,  ...args) => {
+    let count = 0;
+
+    for (let i = 0; i < n; i++) {
+        count += args[i];
+    }
+
+    return count === sum ? "Yes" : "No";
+}
+
+// console.log(money(2, 4, 2, 3))
+
